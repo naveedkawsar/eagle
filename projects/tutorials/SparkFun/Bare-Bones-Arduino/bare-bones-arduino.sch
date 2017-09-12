@@ -3782,12 +3782,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="C1" library="SparkFun-Capacitors" deviceset="0.1UF" device="-KIT-EZ-50V-20%" value="0.1uF"/>
 <part name="GND2" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="U1" library="SparkFun-IC-Microcontroller" deviceset="ATMEGA328P_PDIP" device="" value="328P"/>
-<part name="D1" library="SparkFun-LED" deviceset="LED" device="5MM"/>
+<part name="D1" library="SparkFun-LED" deviceset="LED" device="5MM" value="Red"/>
 <part name="D2" library="SparkFun-LED" deviceset="LED" device="5MM"/>
 <part name="D3" library="SparkFun-LED" deviceset="LED" device="5MM"/>
 <part name="SUPPLY2" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
 <part name="SUPPLY3" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
-<part name="R1" library="SparkFun-Resistors" deviceset="RESISTOR" device="AXIAL-0.3" value=" "/>
+<part name="R1" library="SparkFun-Resistors" deviceset="RESISTOR" device="AXIAL-0.3" value=" 10k"/>
 <part name="R2" library="SparkFun-Resistors" deviceset="RESISTOR" device="AXIAL-0.3" value=" 220"/>
 <part name="R3" library="SparkFun-Resistors" deviceset="RESISTOR" device="AXIAL-0.3" value=" 220"/>
 <part name="R4" library="SparkFun-Resistors" deviceset="RESISTOR" device="AXIAL-0.3" value=" 220"/>
@@ -3797,10 +3797,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND6" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="C2" library="SparkFun-Capacitors" deviceset="0.1UF" device="-KIT-EZ-50V-20%" value="0.1uF"/>
 <part name="J2" library="SparkFun-Connectors" deviceset="AVR_SPI_PROG_3X2" device="PTH"/>
-<part name="J3" library="SparkFun-Connectors" deviceset="6_PIN_SERIAL_TARGET" device=""/>
-<part name="J4" library="SparkFun-Connectors" deviceset="CONN_08" device="&quot;"/>
+<part name="J3" library="SparkFun-Connectors" deviceset="6_PIN_SERIAL_TARGET" device="" value="HEADER1x06"/>
+<part name="J4" library="SparkFun-Connectors" deviceset="CONN_08" device="&quot;" value="HEADER1X08"/>
 <part name="SUPPLY4" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
 <part name="GND7" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND8" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="SUPPLY5" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3834,6 +3836,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="J4" gate="G$1" x="200.66" y="129.54" rot="R180"/>
 <instance part="SUPPLY4" gate="G$1" x="63.5" y="71.12"/>
 <instance part="GND7" gate="1" x="63.5" y="43.18"/>
+<instance part="GND8" gate="1" x="193.04" y="114.3"/>
+<instance part="SUPPLY5" gate="G$1" x="193.04" y="139.7"/>
 </instances>
 <busses>
 </busses>
@@ -3890,6 +3894,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="63.5" y1="55.88" x2="63.5" y2="45.72" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="GND8" gate="1" pin="GND"/>
+<wire x1="193.04" y1="116.84" x2="193.04" y2="119.38" width="0.1524" layer="91"/>
+<pinref part="J4" gate="G$1" pin="8"/>
+<wire x1="193.04" y1="119.38" x2="195.58" y2="119.38" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -3926,6 +3936,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="55.88" y1="60.96" x2="63.5" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="SUPPLY4" gate="G$1" pin="VCC"/>
 <wire x1="63.5" y1="60.96" x2="63.5" y2="71.12" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="J4" gate="G$1" pin="1"/>
+<wire x1="195.58" y1="137.16" x2="193.04" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="SUPPLY5" gate="G$1" pin="VCC"/>
+<wire x1="193.04" y1="137.16" x2="193.04" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
